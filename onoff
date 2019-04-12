@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd /sys/class/leds/input3::capslock # Get into directory with led controls
+for i in `seq 10` # Number of times to blink
+do
+sudo echo 1 > brightness
+sleep 0.1 # Time to wait before turning off
+sudo echo 0 > brightness
+sleep 0.1 # Time to wait before turning on
+done
